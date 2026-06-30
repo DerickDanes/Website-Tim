@@ -28,6 +28,31 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
+// ===== Render daftar anggota tim secara dinamis =====
+const teamMembers = [
+  { nama: "Andi Pratama", peran: "HTML & Struktur", inisial: "AP" },
+  { nama: "Budi Santoso", peran: "CSS & Tampilan", inisial: "BS" },
+  { nama: "Citra Dewi", peran: "JavaScript & Interaksi", inisial: "CD" },
+];
+
+function renderTeam() {
+  const list = document.getElementById("team-list");
+  if (!list) return;
+
+  list.innerHTML = teamMembers
+    .map(
+      (m) => `
+      <article class="team-card">
+        <div class="avatar">${m.inisial}</div>
+        <h3>${m.nama}</h3>
+        <p>${m.peran}</p>
+      </article>`
+    )
+    .join("");
+}
+
+renderTeam();
+
 // ===== Tahun otomatis di footer =====
 const yearEl = document.getElementById("year");
 if (yearEl) {
