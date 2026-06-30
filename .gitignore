@@ -1,0 +1,14 @@
+# File sistem operasi
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Folder & file editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Log & dependensi (jika nanti dipakai)
+node_modules/
+*.log
