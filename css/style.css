@@ -181,10 +181,81 @@ a {
   color: var(--gray);
 }
 
+/* ===== Kartu Anggota Tim ===== */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.team-card {
+  background: var(--white);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  text-align: center;
+}
+
+.team-card .avatar {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.team-card h3 {
+  margin-bottom: 0.25rem;
+}
+
+.team-card p {
+  color: var(--gray);
+}
+
 /* ===== Footer ===== */
 .footer {
   background: var(--dark);
   color: #cbd5e1;
   text-align: center;
   padding: 1.5rem 0;
+}
+
+/* ===== Responsif (tablet & ponsel) ===== */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--white);
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1rem 1.25rem;
+    gap: 1rem;
+    display: none;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .features,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
 }
